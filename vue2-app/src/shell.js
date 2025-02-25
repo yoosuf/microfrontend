@@ -15,6 +15,10 @@ registerApplication({
             });
     },
     activeWhen: ['/'], // Vue 2 app will be active on the root path
+    unmount: () => {
+        console.log('Unmounting Vue 2 App');
+        return Promise.resolve();
+    }
 });
 
 registerApplication({
@@ -23,13 +27,14 @@ registerApplication({
         console.log('Loading Vue 3 App');
         return System.import('http://localhost:3002/v2/bundle.js').then(application => {
             console.log('Vue 3 App loaded:', application);
-            const { createApp } = application.default; // Ensure this is correctly accessing createApp
+            const { createApp } = application.default;
             return {
                 bootstrap: () => Promise.resolve(),
                 mount: (props) => {
                     console.log('Mounting Vue 3 App');
                     return new Promise((resolve) => {
-                        const appInstance = createApp(App); // Ensure App is imported correctly
+                        const appInstance = createApp(App);
+                        appInstance.use(router);
                         appInstance.mount('#app');
                         resolve();
                     });

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Contact Page</h1>
+        <h1>Contact Page (vue2)</h1>
         <p>This is the Contact Page!</p>
     </div>
 </template>

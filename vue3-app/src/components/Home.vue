@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Home Page (vue2)</h1>
+        <h1>Home Page (vue3)</h1>
         <p>Welcome to the Home Page!</p>
     </div>
 </template>

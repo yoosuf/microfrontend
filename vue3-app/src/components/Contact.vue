@@ -1,13 +1,13 @@
 <template>
     <div>
-        <h1>Home Page (vue2)</h1>
-        <p>Welcome to the Home Page!</p>
+        <h1>Contact Page (vue3)</h1>
+        <p>This is the Contact Page!</p>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Home',
+    name: 'Contact',
 };
 </script>
 
