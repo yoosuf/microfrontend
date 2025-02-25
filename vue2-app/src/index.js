@@ -9,7 +9,7 @@ registerApplication({
 registerApplication({
     name: '@my-org/vue3-app',
     app: () => System.import('http://localhost:3002/bundle.js'),
-    activeWhen: ['/v3'], // Vue 3 app will be active on the /v3 path
+    activeWhen: ['/v2'], // Vue 3 app will be active on the /v3 path
 });
 
 start();
