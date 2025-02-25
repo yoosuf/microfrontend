@@ -5,18 +5,25 @@ const { VueLoaderPlugin } = require('vue-loader');
 module.exports = {
     entry: {
         primary: './src/main.js',
-        shell: './src/shell.js' 
+        system: './src/system.js' 
     },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/', 
     },
+    // externals: {
+    //     'single-spa': 'single-spa', // Mark single-spa as external
+    // },
     module: {
         rules: [
             {
-                test: /\.vue$/, 
-                loader: 'vue-loader'
+                test: /\.vue$/,
+                loader: 'vue-loader',
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.js$/, 

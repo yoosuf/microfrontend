@@ -5,6 +5,10 @@ import Contact from './components/Contact.vue';
 
 const routes = [
     {
+        path: '/',
+        redirect: '/v2', // Redirect root to the v2 route
+    },
+    {
         path: '/v2',
         name: 'Home',
         component: Home,
@@ -24,6 +28,12 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+});
+
+// Dynamic Route Handling
+router.beforeEach((to, from, next) => {
+    console.log(`Navigating from ${from.path} to ${to.path}`);
+    next(); // Proceed to the route
 });
 
 export default router;

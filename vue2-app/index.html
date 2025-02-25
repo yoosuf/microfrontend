@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue 2 Application</title>
+    <title>Vue 2 App</title>
+    <script src="https://unpkg.com/systemjs/dist/system.js"></script>
 </head>
 <body>
-    <div id="app"></div>
-    <script src="https://unpkg.com/systemjs/dist/system.js"></script>
-    <script src="shell.bundle.js"></script> <!-- Load shell.js from the public folder -->
-    <script src="app.bundle.js"></script>
+    <div id="app" class="app"></div>
+    <script src="system.bundle.js"></script>
+    <script src="primary.bundle.js"></script>
 </body>
 </html>

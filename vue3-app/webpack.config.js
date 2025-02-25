@@ -4,18 +4,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: {
+        primary: './src/main.js',
+        system: './src/system.js' 
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/v2/', // Set publicPath to include the /v2 route
+    },
+    externals: {
+        'single-spa': 'single-spa', // Mark single-spa as external
     },
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
-            }, 
+                loader: 'vue-loader',
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
             {
                 test: /\.js$/, // Match .js files
                 loader: 'babel-loader',

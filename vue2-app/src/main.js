@@ -1,8 +1,20 @@
 import Vue from 'vue';
 import App from './App.vue';
-import router from './router'; // Ensure this import is present
+import router from './router'; // Ensure the router is included
 
-new Vue({
-    router, // Ensure the router is included here
-    render: h => h(App),
-}).$mount('#app');
+import './styles.css'; // Ensure this import is present
+
+export default {
+    bootstrap: () => Promise.resolve(),
+    mount: () => {
+        const appInstance = new Vue({
+            router,
+            render: h => h(App),
+        }).$mount('#app');
+        return Promise.resolve();
+    },
+    unmount: () => {
+        // Logic to unmount the Vue instance if needed
+        return Promise.resolve();
+    }
+};
