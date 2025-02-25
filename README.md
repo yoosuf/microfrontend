@@ -1,7 +1,7 @@
-# Vue Micro-Frontend Project
+# Vue Micro-Frontend Mono-Repo Project
 
 ## Purpose
-This project demonstrates the integration of Vue 2 and Vue 3 applications using a micro-frontend architecture. The Vue 2 application acts as the host, while the Vue 3 application is loaded dynamically based on routing. This setup utilizes `single-spa` for managing multiple frameworks in a single application.
+This mono-repo project demonstrates the integration of Vue 2 and Vue 3 applications using a micro-frontend architecture. The Vue 2 application acts as the host, while the Vue 3 application is loaded dynamically based on routing. This setup utilizes `single-spa` for managing multiple frameworks in a single application.
 
 ## Project Structure
 - **vue2-app**: Contains the Vue 2 application, which serves as the host.
