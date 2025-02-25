@@ -10,13 +10,13 @@ This project demonstrates the integration of Vue 2 and Vue 3 applications using 
 ## Getting Started
 
 ### Prerequisites
-- Node.js (version 12 or higher)
+- Node.js (version 20 or higher)
 - npm (Node Package Manager)
 
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:yoosuf/microfrontend.git
    cd legacyapp
    ```
 2. Install dependencies for both applications:
