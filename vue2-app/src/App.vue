@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <h1>Vue 2 Application</h1>
-    <p>Welcome to the Vue 2 app!</p>
+  <div id="app">
+    <nav>
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link to="/contact">Contact</router-link>
+    </nav>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+    name: 'App',
 };
 </script>
 

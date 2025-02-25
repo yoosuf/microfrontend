@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import App from './App.vue';
-// import router from './router'; // Import the router
+import router from './router'; // Ensure this import is present
 
 new Vue({
-    // router, // Use the router
+    router, // Ensure the router is included here
     render: h => h(App),
 }).$mount('#app');

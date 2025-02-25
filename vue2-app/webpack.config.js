@@ -3,22 +3,25 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: {
+        primary: './src/main.js',
+        shell: './src/shell.js' 
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/', // Important for Single SPA
+        publicPath: '/', 
     },
     module: {
         rules: [
             {
-                test: /\.vue$/, // Match .vue files
+                test: /\.vue$/, 
                 loader: 'vue-loader'
             },
             {
-                test: /\.js$/, // Match .js files
+                test: /\.js$/, 
                 loader: 'babel-loader',
-                exclude: /node_modules/,
+                exclude: /node_modules/, 
             }
         ]
     },
@@ -26,14 +29,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html',
         }),
-        new VueLoaderPlugin(), // This line is crucial
+        new VueLoaderPlugin(), 
     ],
     devServer: {
         historyApiFallback: true,
         port: 3001, 
         headers: {
-            'Access-Control-Allow-Origin': '*', // Allow requests from any origin
+            'Access-Control-Allow-Origin': '*', 
         },
     },
-    
 };

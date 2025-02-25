@@ -1,0 +1,23 @@
+{
+  "name": "@yoosuf/singlepage",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "vue2-app",
+    "vue3-app"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:vue2": "npm run serve --workspace vue2-app",
+    "serve:vue3": "npm run serve --workspace vue3-app",
+    "start:vue2": "npm run start --workspace vue2-app",
+    "start:vue3": "npm run start --workspace vue3-app",
+    "start": "concurrently \"npm run start:vue2\" \"npm run start:vue3\"",
+    "build:vue2": "npm run build --workspace vue2-app",
+    "build:vue3": "npm run build --workspace vue3-app",
+    "build": "concurrently \"npm run build:vue2\" \"npm run build:vue3\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

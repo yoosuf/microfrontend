@@ -9,7 +9,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/', // Important for Single SPA
+        publicPath: '/v2/', // Set publicPath to include the /v2 route
     },
     module: {
         rules: [
